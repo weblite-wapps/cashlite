@@ -1,20 +1,35 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <TheAppBar/>
+    <!-- <TheTabs/> -->
+    <!-- <router-link to="/">Home</router-link> -->
   </div>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<script>
+import { mapState } from 'vuex'
+// components
+const TheAppBar = () => import('./components/TheAppBar')
+// const TheTabs = () => import('./components/TheTabs')
+// helpers
+// import webliteHandler from './helper/function/weblite.api'
+// store
+import store from './store'
+// W
+// const { W } = window
+
+export default {
+  name: 'App',
+
+  components: {
+    TheAppBar,
+    // TheTabs,
+  },
+
+  // computed: mapState(['isDataFetched', 'isComponentLoaded']),
+
+  // created() {
+  //   W && webliteHandler(this)
+  // },
 }
-</style>
+</script>

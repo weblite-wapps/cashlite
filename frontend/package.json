@@ -1,42 +1,42 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
+  "name": "cashlite",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prettierRealtime": "onchange '**/*.{js,vue,html,css,scss}' -- prettier {{changed}} --write",
+    "prettier": "prettier '**/*.{js,vue,html,css,scss}' --write"
   },
   "dependencies": {
-    "core-js": "^2.6.5",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.3",
+    "dayjs": "^1.8.13",
+    "vue": "^2.5.13",
+    "vue-router": "^3.0.6",
+    "vue-slide-up-down": "^1.7.2",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-plugin-eslint": "^3.8.0",
-    "@vue/cli-service": "^3.8.0",
-    "@vue/eslint-config-airbnb": "^4.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "@vue/cli-plugin-babel": "^3.0.0-beta.6",
+    "@vue/cli-plugin-eslint": "^3.0.0-beta.6",
+    "@vue/cli-service": "^3.0.0-beta.6",
+    "node-sass": "^4.10.0",
+    "onchange": "^5.1.0",
+    "prettier": "1.15.2",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.5.13"
+  },
+  "babel": {
+    "presets": [
+      "@vue/app"
+    ]
   },
   "eslintConfig": {
     "root": true,
-    "env": {
-      "node": true
-    },
     "extends": [
       "plugin:vue/essential",
-      "eslint:recommended",
-      "@vue/airbnb"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
+      "eslint:recommended"
+    ]
   },
   "postcss": {
     "plugins": {
@@ -45,6 +45,7 @@
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions"
+    "last 2 versions",
+    "not ie <= 8"
   ]
 }
